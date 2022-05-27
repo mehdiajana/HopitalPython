@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="row justify-content-between mt-3">
+        <h2 class="col-4">{{ title|title }}</h2>
+        <a class="btn btn-success col-2" href="/addPatient">ajouter</a>
+    </div>
+    <div class="card mt-3">
+        <div class="card-header">
+          <form action="/patient/search/" method="get">
+            <div class="input-group">
+              <div class="form-outline">
+                <input type="search" name="name" class="form-control" id="name" />
+              </div>
+              <button type="submit" class="btn btn-primary" id="search">
+                <i class="fas fa-search"></i>Chercher
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+              <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Email</th>
+              <th scope="col">Date de Naissance</th>
+
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for p in patients %}
+            <tr>
+            <td>{{p.id}}</td>
+              <td>{{p.nom}}</td>
+                <td>{{p.prenom}}</td>
+                <td>{{p.email}} </td>
+              <td>{{p.dateNaissance}}</td>
+
+              <td>
+                  <a href="/patient/details/{{ p.id }}" class="btn btn-sm btn-primary">Affiche</a>
+                  <a href="/patient/update/{{ p.id }}" class="btn btn-sm btn-info">Edit</a>
+                  <a href="/patient/delete/{{ p.id }}" class="btn btn-sm btn-danger" onclick="return confirm('Sur ?');">Supprimer</a>
+                    <a href="/rendezvous/patient/{{ p.id }}" class="btn btn-sm btn-warning">Liste RDV</a>
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                {% if patients.has_previous %}
+               <li> <a class="page-link" href="?page=1">&laquo; first</a></li>
+               <li> <a class="page-link" href="?page={{ patients.previous_page_number }}">previous</a></li>
+            {% endif %}
+                <li class="page-item active"><a class="page-link" href="?page={{ patient.number }}">{{ patients.number }}</a></li>
+        {% if patients.has_next %}
+       <li> <a class="page-link" href="?page={{ patients.next_page_number }}">next</a></li>
+       <li> <a class="page-link" href="?page={{ patients.paginator.num_pages }}">last &raquo;</a></li>
+    {% endif %}
+              </ul>
+            </nav>
+        </div>
+    </div>
+{% endblock content %}

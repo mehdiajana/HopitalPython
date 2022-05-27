@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="row justify-content-between mt-3">
+        <h2 class="col-4">{{ title|title }}</h2>
+
+    </div>
+    <div class="card mt-3">
+        <div class="card-header">
+
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+        <thead>
+            <tr>
+              <th scope="col">Date Rendez Vous</th>
+                <th scope="col">Annuler</th>
+                <th scope="col">Patient</th>
+              <th scope="col">Medecin</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for p in rendez %}
+            <tr>
+              <td>{{p.dateRendezvous}}</td>
+                <td>{{p.annuler}}</td>
+                <td>{{p.patient.id}} </td>
+              <td>{{p.medecin.id}}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock content %}

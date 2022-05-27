@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="row justify-content-between mt-3">
+        <h2 class="col-4">{{ title|title }}</h2>
+        <a class="btn btn-success col-2" href="/addMedecin">ajouter</a>
+    </div>
+    <div class="card mt-3">
+        <div class="card-header">
+
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+              <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Specialite</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for m in medecins %}
+            <tr>
+            <td>{{m.id}}</td>
+              <td>{{m.nom}}</td>
+                <td>{{m.prenom}}</td>
+                <td>{{m.specialite}} </td>
+
+              <td>
+                  <a href="/medecin/details/{{ m.id }}" class="btn btn-sm btn-primary">Affiche</a>
+                  <a href="/medecin/update/{{ m.id }}" class="btn btn-sm btn-info">Edit</a>
+                  <a href="/medecin/delete/{{ m.id }}" class="btn btn-sm btn-danger" onclick="return confirm('Sur ?');">Supprimer</a>
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                {% if medecins.has_previous %}
+               <li> <a class="page-link" href="?page=1">&laquo; first</a></li>
+               <li> <a class="page-link" href="?page={{ medecins.previous_page_number }}">previous</a></li>
+            {% endif %}
+                <li class="page-item active"><a class="page-link" href="?page={{ medecins.number }}">{{ medecins.number }}</a></li>
+        {% if medecins.has_next %}
+       <li> <a class="page-link" href="?page={{ medecins.next_page_number }}">next</a></li>
+       <li> <a class="page-link" href="?page={{ medecins.paginator.num_pages }}">last &raquo;</a></li>
+    {% endif %}
+              </ul>
+            </nav>
+        </div>
+    </div>
+{% endblock content %}

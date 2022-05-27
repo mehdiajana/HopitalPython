@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+{% block stylesheets %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Controle Ajana Mehdi Hopital</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+{% load static %}
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css" rel="stylesheet'%}">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css" rel="stylesheet'%}">
+  <link href="{% static 'assets/vendor/venobox/venobox.css" rel="stylesheet'%}">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet'%}">
+  <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet'%}">
+    <link href="{% static 'assets/style.css'%}" rel="stylesheet">
+    <link href="{% static 'style.css'%}" rel="stylesheet">
+    <link href="{% static 'bootstrap.min.css'%}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+</head>
+{% endblock %}
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="/"><img src="{% static 'assets/hopi.png' %}"/></a></h1>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/patients/">Patients</a></li>
+          <li><a href="/medecins/">Medecins</a></li>
+          <li><a href="/rendezvous/">Rendez Vous</a></li>
+            <li><a href="/consultations/">Consultations</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+      <a href="/admin/" class="get-started-btn scrollto">Espace Admin</a>
+    </div>
+  </header><!-- End Header -->
+  <br>  <br>  <br>
+ <!-- Hero Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background-image: url({% static 'team-1.jpg'%} ); background-repeat: no-repeat, repeat; ">
+        <div class="container py-5">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;">Welcome To Ajana Hospital</h5>
+                    <h1 class="display-1 text-white mb-md-4">Trouver les meilleurs medecins</h1>
+                    <div class="pt-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded" src="{% static 'about.jpg'%}" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="mb-4">
+                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">A propos de Nous</h5>
+                        <h1 class="display-4">Les meilleurs soins médicaux pour vous et votre famille</h1>
+                    </div>
+                    <p>Il s’agit d’un Hôpital Universitaire Privé, couvrant plus de 16 spécialités, s’appuyant sur 6 pôles d’excellence avec un pôle administratif, et doté de plateaux techniques de dernière génération avec une capacité de 171 lits  et places, 11 lits de réanimation, 43 lits et places de      chirurgie et 28 lits et places de médecine physique et de rééducation.</p>
+                    <div class="row g-3 pt-3">
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <i class="fa fa-3x fa-user-md text-primary mb-3"></i>
+                                <h6 class="mb-0">Qualified<small class="d-block text-primary">Doctors</small></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <i class="fa fa-3x fa-procedures text-primary mb-3"></i>
+                                <h6 class="mb-0">Emergency<small class="d-block text-primary">Services</small></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <i class="fa fa-3x fa-microscope text-primary mb-3"></i>
+                                <h6 class="mb-0">Accurate<small class="d-block text-primary">Testing</small></h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="bg-light text-center rounded-circle py-4">
+                                <i class="fa fa-3x fa-ambulance text-primary mb-3"></i>
+                                <h6 class="mb-0">Free<small class="d-block text-primary">Ambulance</small></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+<footer class="text-center text-white mt-5" style="background-color: #f1f1f1;">
+  <!-- Grid container -->
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center text-dark p-3" style="background-color: rgba(236,236,236,0.2);">
+    © Ajana Mehdi Controle Django
+  </div>
+  <!-- Copyright -->
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+  </body>
+</html>
+

@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load static %}
+
+    <section class="service_details_area section_padding">
+<div class="section-title">
+          <h2>Le Patient</h2>
+</div>
+<div class="container-lg">
+    <div class="row">
+        <div class="col-md-7" style="margin: 5px auto;" >
+            <div class="service_details_left">
+                <div class="service_details_left_image"><img style="width: 617px; height: 370px" src="{% static 'per.png'%}"><br>
+                    <h1>{{patient.nom}}  {{patient.prenom}} </h1>
+                </div>
+                <div class="container-lg">
+                    <p style="font-size: 20px;">Date Naissance:&nbsp;&nbsp; <b>{{patient.dateNaissance}}</b><br>Email:&nbsp;&nbsp; <b>{{patient.email}}</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock content %}
